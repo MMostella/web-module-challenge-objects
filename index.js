@@ -18,7 +18,7 @@ The function should:
 function createMenuItem(name, price, category){
      return {name, price, category};
 }
-
+//PASSED
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1b: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Invoke your function!
@@ -50,16 +50,22 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  // discount: {
-  //   teacher:,
-  //   student:,
-  //   public:
-  // }
+  discount: function(customer){
+    if (customer === 'teacher'){
+      return this.price * 0.75;
+    } else if (customer === 'student'){
+      return this.price * 0.75;
+    } else if (customer === 'public'){
+      return this.price * 0.90;
+    } else {
+      return this.price;
+    }
+  }
 }
 
-// console.log('Task 2:', burger.discount('teacher'));
-// console.log('Task 2:', burger.discount('student'));
-// console.log('Task 2:', burger.discount('public'));
+console.log('Task 2:', burger.discount('teacher'));
+console.log('Task 2:', burger.discount('student'));
+console.log('Task 2:', burger.discount('public'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -138,10 +144,10 @@ Use the getLastReview function below to do the following:
 */
 
 function getLastReview(array) {
-  // return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1]rating} star review, and their feedback was: ${array[array.length -1]feedback}`;
+  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length -1].feedback}`;
 } 
 
-
+//PASSED
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
